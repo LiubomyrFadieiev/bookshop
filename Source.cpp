@@ -1,6 +1,9 @@
 #include <iostream>
+using namespace std;
 
-int main(){
-	int i = 1 + 2;
+void Showmenu();
+
+int main() {
+	Showmenu();
 	return 0;
 }

@@ -1,0 +1,4 @@
+0,Winnie-The-Pooh,Alexander Milne,250,20,0
+0,Alice In Wonderland,Lewis Caroll,150,25,0
+1,Kobzar,Taras Shevchenko,100,35,15
+0,The C++ Programming Language (4th Edition),Bjarne Stroustrup,350,200,0
