@@ -26,7 +26,7 @@ BranchRepository::BranchRepository() {
 }
 
 void BranchRepository::Readfromfile() {
-	if (sync == false)
+	if (!sync)
 	{
 		lastindex = -1;
 		ifstream file("branch.txt");
@@ -58,6 +58,7 @@ void BranchRepository::Readfromfile() {
 			}
 		}
 		file.close();
+		sync = true;
 		delete[]name;
 		delete[]address;
 		delete[]rating;

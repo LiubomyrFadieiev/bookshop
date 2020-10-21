@@ -10,7 +10,7 @@ BookRepository::BookRepository() : Repository(){
 }
 
 void BookRepository::Readfromfile() {
-	if (sync == false) 
+	if (!sync) 
 	{
 		lastindex = -1;
 		ifstream file("book.txt");
@@ -45,6 +45,7 @@ void BookRepository::Readfromfile() {
 			}
 		}
 		file.close();
+		sync = true;
 		delete[]title;
 		delete[]author;
 		delete[]pagesize;
