@@ -13,7 +13,7 @@ void BookRepository::Readfromfile() {
 	if (!sync) 
 	{
 		lastindex = -1;
-		ifstream file("book.txt");
+		ifstream file("../data/book.txt");
 		int maxlen = 100; char delim = ',';
 		char* title = new char[maxlen],
 			* author = new char[maxlen],
@@ -62,7 +62,7 @@ void BookRepository::bookwrite() {
 }
 
 void BookRepository::addbook() {
-	ofstream file("book.txt", ios::app);
+	ofstream file("../data/book.txt", ios::app);
 	string title, author, fake; int pagesize, price;
 	if (!file) {
 		cout << "The file does not found.";
@@ -83,7 +83,7 @@ void BookRepository::addbook() {
 }
 
 void BookRepository::addpoetry() {
-	ofstream file("book.txt", ios::app);
+	ofstream file("../data/book.txt", ios::app);
 	string title, author, fake; int pagesize, price, numberofpoems;
 	if (!file) {
 		cout << "The file does not found.";

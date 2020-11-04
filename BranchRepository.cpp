@@ -29,7 +29,7 @@ void BranchRepository::Readfromfile() {
 	if (!sync)
 	{
 		lastindex = -1;
-		ifstream file("branch.txt");
+		ifstream file("../data/branch.txt");
 		int maxlen = 100;
 		char* name = new char[maxlen],
 			* address = new char[maxlen],
@@ -77,7 +77,7 @@ void BranchRepository::branchwrite() {
 }
 
 void BranchRepository::addlibrary() {
-	ofstream file("branch.txt", ios::app);
+	ofstream file("../data/branch.txt", ios::app);
 	string name, address, fake; int rating, books, readers;
 	if (!file) {
 		cout << "The file does not found.";
@@ -99,7 +99,7 @@ void BranchRepository::addlibrary() {
 }
 
 void BranchRepository::addbookshop() {
-	ofstream file("branch.txt", ios::app);
+	ofstream file("../data/branch.txt", ios::app);
 	string name, address, fake; int rating, income, till;
 	if (!file) {
 		cout << "The file does not found.";
