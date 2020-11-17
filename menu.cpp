@@ -1,17 +1,16 @@
 #include <iostream>
 #include <string>
-#include "BookRepository.h"
-#include "BranchRepository.h"
+#include "Repository.h"
 using namespace std;
 
 void Showmenu() {
-	BookRepository book;
-	BranchRepository branch;
+	Repository<Book> book;
+	Repository<Branch> branch;
 	bool menu = true; char option;
 	while (menu) {
 		system("cls");
 		cout << "	MENU\n";
-		cout << "1. Show all books;\n2. Add new book;\n3. Add new poetry book;\n4. Show branches;\n5. Add new library;\n6. Add new bookshop;\n7. Set branch rating;\n0. Exit.\n";
+		cout << "1. Show all books;\n2. Show branches;\n3. Add new book (or poetry);\n4. Add new branch (bookshop or library);\n5. Set branch rating;\n0. Exit.\n";
 		try {
 			cin >> option;
 			if (!isdigit(option) || option < 0) {
@@ -26,29 +25,26 @@ void Showmenu() {
 		switch (option) {
 		case '1':
 			system("cls");
-			book.Readfromfile();
-			book.bookwrite();
+			book.Readbookfromfile();
+			book.write();
 			system("pause");
 			break;
 		case '2':
-			book.addbook();
+			system("cls");
+			branch.Readbranchfromfile();
+			branch.write();
+			system("pause");
 			break;
 		case '3':
-			book.addpoetry();
+			system("cls");
+			book.create();
 			break;
 		case '4':
 			system("cls");
-			branch.Readfromfile();
-			branch.branchwrite();
-			system("pause");
+			branch.create();
 			break;
 		case '5':
-			branch.addlibrary();
-			break;
-		case '6':
-			branch.addbookshop();
-			break;
-		case '7':
+			system("cls");
 			branch.setrating();
 			break;
 		case '0':
